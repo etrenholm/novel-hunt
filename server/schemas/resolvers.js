@@ -13,16 +13,6 @@ const resolvers = {
                 return userData;
             }
             throw new AuthenticationError('Please log in to see this page.')
-        },
-        users: async () => {
-            return User.find()
-                .select('-__v -password')
-                .populate('savedBooks')
-        },
-        user: async (parent, {username}) => {
-            return User.findOne({ username })
-                .select('-__v -password')
-                .populate('savedBooks')
         }
     },
 
@@ -49,13 +39,14 @@ const resolvers = {
 
             return { token, user };
         },
-        saveBook: async (parent, args, context) => {
+        saveBook: async (parent, { input }, context) => {
+            console.log(input)
             if (context.user) {
-                const updatedUser = await User.findOneAndUpdate(
+                const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { savedBooks: args } },
-                    { new: true, runValidators: true }
-                ).populate('savedBooks')
+                    { $addToSet: { savedBooks: input } },
+                    { new: true }
+                )
 
                 return updatedUser
             }
@@ -67,7 +58,7 @@ const resolvers = {
                     { _id: context.user._id },
                     { $pull: { savedBooks: { bookId } } },
                     { new: true }
-                ).populate('savedBooks')
+                )
 
                 return updatedUser
             }
