@@ -20,10 +20,10 @@ npm install
 ```
 
 ## Usage
-To run this application, type the following into the command line:
+To run this application, navigate to the root directory and type the following into the command line:
 
 ```
-npm start
+npm run develop
 ``` 
 
 ## Technologies
@@ -73,7 +73,7 @@ npm start
 * [GitHub Repository](https://github.com/etrenholm/novel-hunt)
 
 ### Output Example
-![mockup]()
+![mockup](./assets/novelhunt-mockup.png)
 
 ## Credit
 Erica Trenholm: https://github.com/etrenholm
