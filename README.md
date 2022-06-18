@@ -59,6 +59,8 @@ npm start
 * Create Query and Mutation files 
 * Create an Apollo Provider
 * Update Components and Pages
+* Update query to get user data
+* Update functions in to save a book and delete a book
 
 ### STEP 4. - FINALIZE AND DEPLOY
 * Work through various bugs
