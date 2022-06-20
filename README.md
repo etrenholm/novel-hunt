@@ -69,7 +69,7 @@ npm run develop
 * Make tweaks and finished README.md
 
 ## Results
-* [Heroku Link]()
+* [Heroku Link](https://obscure-everglades-16244.herokuapp.com/)
 * [GitHub Repository](https://github.com/etrenholm/novel-hunt)
 
 ### Output Example

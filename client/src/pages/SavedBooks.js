@@ -13,6 +13,8 @@ const SavedBooks = () => {
 
   const [deleteBook] = useMutation(REMOVE_BOOK)
   const { loading, data } = useQuery(GET_ME)
+
+  // get user data
   const userData = data?.me || {}
   const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -36,6 +38,7 @@ const SavedBooks = () => {
 
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
+      window.location.assign('/saved')
     } catch (err) {
       console.error(err);
     }
